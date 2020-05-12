@@ -8,7 +8,6 @@ which I thought might be useful for other people.
 You might appreciate it to..
 - Have a Vim + OCaml environment on any machines with docker.
 - Use as testbench to configure your environment on your debian machine.
-- Better understand how to configure Vim to work well with OCaml.
 - Understand needed requirements for camlpdf, owl, and owl-plplot.
 
 ## Testing the Image
