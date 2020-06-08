@@ -38,11 +38,22 @@ RUN opam install utop merlin ocp-indent
 ## Will configure vim to use the Merlin & Ocp-indent tools 
 RUN opam user-setup install
 
+## Installing ALE for live syntax & semantic errors
+RUN mkdir -p ~/.vim/pack/git-plugins/start \
+&& git clone --depth 1 https://github.com/dense-analysis/ale.git \
+~/.vim/pack/git-plugins/start/ale
+
 ## Popular Vim remapping you might want
 RUN echo "imap jj <Esc>" >> /home/opam/.vimrc
 
 ######
-## Vim is now configured, now forward with some useful OCaml libraries
+## At this stage, we have
+## Linting (Syntax & Semantics checking): automatic while typing
+## Type Information: `\t` in normal mode
+## Auto-completion: `<C-x><C-o>` in editing mode
+## Indentation: `=` in visual mode, otherwise automatic while typing
+##
+## Vim is configured, now forward with some useful OCaml libraries
 ######
 
 ## install janestreet standard libs for OCaml 
@@ -67,4 +78,3 @@ ENV WS /home/opam/ws
 RUN mkdir $WS
 WORKDIR $WS
 RUN sudo chown -R opam .
-
