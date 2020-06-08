@@ -17,7 +17,7 @@ $ docker run --rm -it ytrellu2/vim-for-ocaml
 ```
 And once inside:
 ```bash
-~/ws$ echo "open Core" > test.ml && corebuild test.byte
+~/ws$ echo "open Core" > test.ml && corebuild test.byte && echo "Compiled!"
 ```
 
 ## Resources
