@@ -1,4 +1,4 @@
-FROM ocaml/opam2
+FROM ocaml/opam
 
 LABEL "maintainer"="yoann.trellu@yahoo.com"
 
